@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import util.ExtentReportManager;
 
 public class MobileResultPage extends BasePage {
     public MobileResultPage(WebDriver driver) {
@@ -13,6 +14,12 @@ public class MobileResultPage extends BasePage {
     private WebElement chkApple;
 
     public void clickOnAppleCheckBox(){
-        chkApple.click();
+        try {
+            chkApple.click();
+            ExtentReportManager.logPass("Clicked on "+chkApple.toString());
+        }catch (Exception e){
+            ExtentReportManager.logFail("Can not find the locator "+chkApple.toString());
+        }
+
     }
 }

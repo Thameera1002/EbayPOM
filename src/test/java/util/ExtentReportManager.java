@@ -15,7 +15,7 @@ public class ExtentReportManager {
     public static void initReport(){
         extentReports = new ExtentReports();
         ExtentSparkReporter sparkReporter =
-                new ExtentSparkReporter("/report/ExtentReport.html");
+                new ExtentSparkReporter(System.getProperty("user.dir")+"/report/ExtentReport.html");
         sparkReporter.config().setTheme(Theme.STANDARD);
         sparkReporter.config().setDocumentTitle("Ebay search Test");
         sparkReporter.config().setReportName("Ebay search Test");

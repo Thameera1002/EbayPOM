@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import util.ExtentReportManager;
 
 public class DressResultPage extends BasePage{
     public DressResultPage(WebDriver driver) {
@@ -15,8 +16,9 @@ public class DressResultPage extends BasePage{
     public void clickOnIndiaCheckBox(){
         try {
             chkIndia.click();
+            ExtentReportManager.logPass("Click on "+chkIndia.toString());
         }catch (Exception e){
-
+            ExtentReportManager.logFail("Can not find the locator "+chkIndia.toString());
         }
 
     }
