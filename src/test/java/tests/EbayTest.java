@@ -6,10 +6,12 @@ import pages.BasePage;
 import pages.DressResultPage;
 import pages.EbayHomePage;
 import pages.MobileResultPage;
+import util.ExtentReportManager;
 
 public class EbayTest extends BaseTest{
     @Test
     public void searchMobilePhoneTest(){
+        ExtentReportManager.createTest(Thread.currentThread().getStackTrace()[2].getMethodName());
         BasePage basePage = PageFactory.initElements(driver, BasePage.class);
         EbayHomePage ebayHomePage = basePage.initApp();
         ebayHomePage.fillSearchField("Iphone");

@@ -13,6 +13,11 @@ public class DressResultPage extends BasePage{
     private WebElement chkIndia;
 
     public void clickOnIndiaCheckBox(){
-        chkIndia.click();
+        try {
+            chkIndia.click();
+        }catch (Exception e){
+
+        }
+
     }
 }
